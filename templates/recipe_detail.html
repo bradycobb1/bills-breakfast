@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe['recipe_name'] }} - Bill's Breakfast</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ recipe['recipe_name'] }}</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="{{ url_for('static', filename=recipe['recipe_image']) }}" alt="{{ recipe['recipe_name'] }}" style="width:100%; max-width:400px;">
+        <p>{{ recipe['description'] }}</p>
+        <p><strong>Price: ${{ recipe['price'] }}</strong></p>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2023-2024, Bill's Breakfast</p>
+    </footer>
+</body>
+</html>
